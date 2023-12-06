@@ -2,8 +2,8 @@ import 'package:animated_notch_bottom_bar/animated_notch_bottom_bar/animated_not
 import 'package:e_commerce_app/core/const.dart';
 import 'package:e_commerce_app/feature/cart/view/screen/cart_screen.dart';
 import 'package:e_commerce_app/feature/home/view/screens/home_screen.dart';
+import 'package:e_commerce_app/feature/liaison/view/screens/liaison_screen.dart';
 import 'package:e_commerce_app/feature/reward/view/screen/reward_screen.dart';
-import 'package:e_commerce_app/screens/liason/liason_screen.dart';
 import 'package:e_commerce_app/screens/profile/profile_screen.dart';
 import 'package:flutter/material.dart';
 

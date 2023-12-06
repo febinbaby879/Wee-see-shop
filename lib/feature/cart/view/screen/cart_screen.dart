@@ -1,5 +1,6 @@
 import 'package:e_commerce_app/commen/elevated_buttun.dart';
 import 'package:e_commerce_app/core/const.dart';
+import 'package:e_commerce_app/core/theme.dart';
 import 'package:e_commerce_app/feature/cart/view/widgets/address_container.dart';
 import 'package:e_commerce_app/feature/cart/view/widgets/cart_item_container.dart';
 import 'package:e_commerce_app/feature/cart/view/widgets/cart_liked_containers_builder.dart';
@@ -27,7 +28,7 @@ class CartScreen extends StatelessWidget {
               mainHeading('You may also like this', kwhite, 17),
               sizedboxwithheight(kheight! * .02),
               SizedBox(
-                height: kheight! * .422,
+                height: 370,
                 child: ListView.separated(
                   separatorBuilder: (context, index) => sizedboxwithWidth(
                     kwidth! * .02,
@@ -46,7 +47,7 @@ class CartScreen extends StatelessWidget {
                       const Color.fromRGBO(83, 83, 83, 1.0),
                       kyellow,
                       kblack,
-                      Colors.red
+                      AppTheme.kred
                     ];
                     return CartLikedItemBuilder(
                       color: colors[index],
@@ -75,7 +76,9 @@ class CartScreen extends StatelessWidget {
               ),
               sizedboxwithheight(kheight! * .02),
               Container(
-                decoration: BoxDecoration(border: Border.all(color: kyellow)),
+                decoration: BoxDecoration(
+                  border: Border.all(color: kyellow),
+                ),
                 width: double.infinity,
                 height: 70,
                 child: Row(
@@ -91,7 +94,9 @@ class CartScreen extends StatelessWidget {
                           const Text(
                             'Save upto 900/-',
                             style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.bold),
+                              fontSize: 17,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                           sizedboxwithheight(kheight! * .01),
                           const Text(
@@ -148,10 +153,10 @@ class CartScreen extends StatelessWidget {
                           const Text(
                             '\$4750',
                             style: TextStyle(color: kblack),
-                          )
+                          ),
                         ],
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),

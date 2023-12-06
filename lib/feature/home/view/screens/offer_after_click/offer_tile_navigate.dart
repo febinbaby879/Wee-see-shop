@@ -20,25 +20,37 @@ class OffersTileHotDealsScreen extends StatelessWidget {
             const Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Text('data'),
-                Text('data'),
-                Text('data'),
+                Text('Premium'),
+                Text(
+                  'Hot Deals',
+                  style: TextStyle(
+                    fontSize: 19,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Text('Co ords'),
               ],
             ),
-            Row(
-              children: [
-                miniConta('Filter 1'),
-                sizedboxwithWidth(kwidth! * .02),
-                miniConta('Filter 2'),
-              ],
+            sizedboxwithheight(kheight! * .03),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 19),
+              child: Row(
+                children: [
+                  miniConta('Filter 1'),
+                  sizedboxwithWidth(kwidth! * .03),
+                  miniConta('Filter 2'),
+                ],
+              ),
             ),
+            sizedboxwithheight(kheight! * .03),
             Expanded(
-              child: SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 18),
                 child: Row(
                   children: [
                     SizedBox(
-                      height: kheight!,
-                      width: kwidth! / 2.1,
+                      //height: kheight!,
+                      width: kwidth! / 2.3,
                       child: ListView.builder(
                         scrollDirection: Axis.vertical,
                         itemCount: 4,
@@ -71,10 +83,10 @@ class OffersTileHotDealsScreen extends StatelessWidget {
                         },
                       ),
                     ),
-                    sizedboxwithWidth(kwidth! * .02),
+                    sizedboxwithWidth(kwidth! * .03),
                     SizedBox(
                       height: kheight!,
-                      width: kwidth! / 2.06,
+                      width: kwidth! / 2.3,
                       child: ListView.builder(
                         scrollDirection: Axis.vertical,
                         itemCount: 4,
@@ -92,7 +104,7 @@ class OffersTileHotDealsScreen extends StatelessWidget {
                             Colors.red
                           ];
                           return InkWell(
-                             onTap: () => Navigator.of(context).push(
+                            onTap: () => Navigator.of(context).push(
                               MaterialPageRoute(
                                 builder: (context) => DetailScreen(
                                   img: images[index],
@@ -117,22 +129,20 @@ class OffersTileHotDealsScreen extends StatelessWidget {
     );
   }
 
-  Container miniConta(String text) {
+  Widget miniConta(String text) {
     return Container(
       decoration: BoxDecoration(
         border: Border.all(color: kyellow),
+        borderRadius: BorderRadius.circular(12),
       ),
-      width: kwidth! / 2.1,
-      height: 30,
-      child: Padding(
-        padding: const EdgeInsets.only(),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(text),
-            const Icon(Icons.arrow_drop_down),
-          ],
-        ),
+      width: kwidth! / 2.3,
+      height: 40,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Text(text),
+          const Icon(Icons.arrow_drop_down),
+        ],
       ),
     );
   }
