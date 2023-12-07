@@ -16,7 +16,6 @@ class RewardScreen extends StatelessWidget {
           child: AppBaar(),
         ),
         body: TabBarView(
-          clipBehavior: Clip.antiAliasWithSaveLayer,
           children: [
             RewardWallet(),
             Radeem(),

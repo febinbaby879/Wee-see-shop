@@ -28,7 +28,7 @@ class CartScreen extends StatelessWidget {
               mainHeading('You may also like this', kwhite, 17),
               sizedboxwithheight(kheight! * .02),
               SizedBox(
-                height: 370,
+                height: 380,
                 child: ListView.separated(
                   separatorBuilder: (context, index) => sizedboxwithWidth(
                     kwidth! * .02,

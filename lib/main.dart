@@ -10,7 +10,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     kheight = MediaQuery.of(context).size.height;
@@ -18,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: AppTheme.theme,
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'We see shop',
       home: const NumberScreen(),
     );
   }

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class SelectedContainerProvider with ChangeNotifier {
   ContainerType _selectedContainer = ContainerType.message;
-
+  
   ContainerType get selectedContainer => _selectedContainer;
 
   void setSelectedContainer(IconData icon) {

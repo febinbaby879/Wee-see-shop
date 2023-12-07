@@ -14,6 +14,11 @@ class OffersTile extends StatelessWidget {
       'asset/images/puma.png',
       'asset/images/LV.png',
     ];
+    final List<String> offerGiffs = [
+      'asset/images/nikenewgiff.gif',
+      'asset/images/pumagiff.gif',
+      'asset/images/lvlow.gif',
+    ];
     List<Color> tileColor = [
       Colors.red,
       kyellow,
@@ -73,19 +78,21 @@ class OffersTile extends StatelessWidget {
                       top: 80,
                       left: 10,
                       child: Text(
-                        'Get 10% instant discount \non purchase of products across \nfashion category',
+                        'Get 10% instant discount \non purchase of products acr\noss fashion category',
                         style: TextStyle(fontSize: 12),
                       ),
                     ),
                     Positioned(
                       top: 120,
                       left: 10,
-                      //bottom: 20,
-                      child: SizedBox(
-                        height: 170,
-                        width: 140,
-                        child: Image.asset(
-                          brandImage[index],
+                      child: Opacity(
+                        opacity: .1,
+                        child: SizedBox(
+                          height: 170,
+                          width: 140,
+                          child: Image.asset(
+                            offerGiffs[index],
+                          ),
                         ),
                       ),
                     ),

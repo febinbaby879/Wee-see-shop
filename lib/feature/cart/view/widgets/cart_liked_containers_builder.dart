@@ -60,7 +60,7 @@ class CartLikedItemBuilder extends StatelessWidget {
                         text: const TextSpan(
                           text: 'Rs 11,270 ',
                           style: TextStyle(
-                            fontSize: 14,
+                            fontSize: 13,
                             fontWeight: FontWeight.bold,
                           ),
                           children: [

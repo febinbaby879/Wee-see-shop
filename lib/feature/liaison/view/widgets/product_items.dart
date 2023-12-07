@@ -16,7 +16,7 @@ class ProductList extends StatelessWidget {
           children: [
             Container(
               height: 40,
-              width: kwidth! / 2.3,
+              width: kwidth! / 2.35,
               decoration: BoxDecoration(
                 border: Border.all(color: kyellow),
                 borderRadius: BorderRadius.circular(12),
@@ -32,7 +32,7 @@ class ProductList extends StatelessWidget {
             sizedboxwithWidth(kwidth! * .04),
             Container(
               height: 40,
-              width: kwidth! / 2.3,
+              width: kwidth! / 2.32,
               decoration: BoxDecoration(
                 border: Border.all(color: kyellow),
                 borderRadius: BorderRadius.circular(12),
@@ -48,82 +48,80 @@ class ProductList extends StatelessWidget {
           ],
         ),
         Expanded(
-          child: SingleChildScrollView(
-            child: Row(
-              children: [
-                SizedBox(
-                  height: kheight!,
-                  width: kwidth! / 2.3,
-                  child: ListView.builder(
-                    scrollDirection: Axis.vertical,
-                    itemCount: 4,
-                    itemBuilder: (context, index) {
-                      List<String> images = [
-                        'asset/images/shoe 2.jpg',
-                        'asset/images/shoe 3.jpeg',
-                        'asset/images/Rectangle 2656.png',
-                        'asset/images/cart like image2.png',
-                      ];
-                      List<Color> colors = [
-                        kblack,
-                        Colors.red,
-                        const Color.fromRGBO(83, 83, 83, 1.0),
-                        kyellow,
-                      ];
-                      //  InkWell(
-                      //   onTap: () => Navigator.of(context).push(
-                      //     MaterialPageRoute(
-                      //       builder: (context) => DetailScreen(
-                      //         img: images[index],
-                      //       ),
-                      //     ),
-                      //   ),
-                      return CartLikedItemBuilder(
-                        color: colors[index],
-                        image: images[index],
-                        //),
-                      );
-                    },
-                  ),
+          child: Row(
+            children: [
+              SizedBox(
+                height: kheight!,
+                width: kwidth! / 2.3,
+                child: ListView.builder(
+                  scrollDirection: Axis.vertical,
+                  itemCount: 4,
+                  itemBuilder: (context, index) {
+                    List<String> images = [
+                      'asset/images/shoe 2.jpg',
+                      'asset/images/shoe 3.jpeg',
+                      'asset/images/Rectangle 2656.png',
+                      'asset/images/cart like image2.png',
+                    ];
+                    List<Color> colors = [
+                      kblack,
+                      Colors.red,
+                      const Color.fromRGBO(83, 83, 83, 1.0),
+                      kyellow,
+                    ];
+                    //  InkWell(
+                    //   onTap: () => Navigator.of(context).push(
+                    //     MaterialPageRoute(
+                    //       builder: (context) => DetailScreen(
+                    //         img: images[index],
+                    //       ),
+                    //     ),
+                    //   ),
+                    return CartLikedItemBuilder(
+                      color: colors[index],
+                      image: images[index],
+                      //),
+                    );
+                  },
                 ),
-                sizedboxwithWidth(kwidth! * .02),
-                SizedBox(
-                  height: kheight!,
-                  width: kwidth! / 2.3,
-                  child: ListView.builder(
-                    scrollDirection: Axis.vertical,
-                    itemCount: 4,
-                    itemBuilder: (context, index) {
-                      List<String> images = [
-                        'asset/images/Rectangle 2656.png',
-                        'asset/images/cart like image2.png',
-                        'asset/images/shoe 2.jpg',
-                        'asset/images/shoe 3.jpeg',
-                      ];
-                      List<Color> colors = [
-                        const Color.fromRGBO(83, 83, 83, 1.0),
-                        kyellow,
-                        kblack,
-                        Colors.red
-                      ];
-                      //  InkWell(
-                      //   onTap: () => Navigator.of(context).push(
-                      //     MaterialPageRoute(
-                      //       builder: (context) => DetailScreen(
-                      //         img: images[index],
-                      //       ),
-                      //     ),
-                      //   ),
-                      return CartLikedItemBuilder(
-                        color: colors[index],
-                        image: images[index],
-                      );
-                      // );
-                    },
-                  ),
+              ),
+              sizedboxwithWidth(kwidth! * .02),
+              SizedBox(
+                height: kheight!,
+                width: kwidth! / 2.3,
+                child: ListView.builder(
+                  scrollDirection: Axis.vertical,
+                  itemCount: 4,
+                  itemBuilder: (context, index) {
+                    List<String> images = [
+                      'asset/images/Rectangle 2656.png',
+                      'asset/images/cart like image2.png',
+                      'asset/images/shoe 2.jpg',
+                      'asset/images/shoe 3.jpeg',
+                    ];
+                    List<Color> colors = [
+                      const Color.fromRGBO(83, 83, 83, 1.0),
+                      kyellow,
+                      kblack,
+                      Colors.red
+                    ];
+                    //  InkWell(
+                    //   onTap: () => Navigator.of(context).push(
+                    //     MaterialPageRoute(
+                    //       builder: (context) => DetailScreen(
+                    //         img: images[index],
+                    //       ),
+                    //     ),
+                    //   ),
+                    return CartLikedItemBuilder(
+                      color: colors[index],
+                      image: images[index],
+                    );
+                    // );
+                  },
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         )
       ],

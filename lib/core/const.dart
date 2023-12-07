@@ -7,7 +7,9 @@ const Color klightGrey = Color.fromRGBO(166, 163, 163, 0.098);
 const Color kMainBlack = Color.fromRGBO(29, 29, 31, 1.000);
 const Color klightOrange = Color.fromRGBO(255, 168, 0, 1.000);
 const Color kyellow = Color.fromRGBO(255, 200, 0, 1.000);
+const Color klightyellow = Color.fromRGBO(236, 212, 124, 1);
 const Color kwhite = Colors.white;
+const Color messageRplyBoxColor = Color.fromRGBO(12, 24, 41, 1.000);
 
 double? kheight;
 double? kwidth;

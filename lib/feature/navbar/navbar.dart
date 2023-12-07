@@ -4,7 +4,6 @@ import 'package:e_commerce_app/feature/cart/view/screen/cart_screen.dart';
 import 'package:e_commerce_app/feature/home/view/screens/home_screen.dart';
 import 'package:e_commerce_app/feature/liaison/view/screens/liaison_screen.dart';
 import 'package:e_commerce_app/feature/reward/view/screen/reward_screen.dart';
-import 'package:e_commerce_app/screens/profile/profile_screen.dart';
 import 'package:flutter/material.dart';
 
 class CustumNav extends StatefulWidget {
@@ -50,7 +49,6 @@ class _CustumNavState extends State<CustumNav> {
           ? Padding(
               padding: const EdgeInsets.all(12.0),
               child: AnimatedNotchBottomBar(
-                /// Provide NotchBottomBarController
                 notchBottomBarController: _controller,
                 color: kyellow,
                 showLabel: true,
@@ -121,6 +119,17 @@ class _CustumNavState extends State<CustumNav> {
               ),
             )
           : null,
+    );
+  }
+}
+
+class ProfileScreen extends StatelessWidget {
+  const ProfileScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Center(
+      child: Text('Profile section'),
     );
   }
 }
