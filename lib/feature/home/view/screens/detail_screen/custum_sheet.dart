@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 
 class CustumShowModelBottumSheet extends StatelessWidget {
   const CustumShowModelBottumSheet({
-    super.key,
-  });
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,9 +18,8 @@ class CustumShowModelBottumSheet extends StatelessWidget {
         ),
       ),
       child: ListView(
-        //crossAxisAlignment: CrossAxisAlignment.start,
-        //mainAxisSize: MainAxisSize.min,
         children: [
+          Container(),
           Container(
             decoration: const BoxDecoration(
               borderRadius: BorderRadius.only(
@@ -44,14 +43,16 @@ class CustumShowModelBottumSheet extends StatelessWidget {
             ),
           ),
           sizedboxwithheight(kheight! * .02),
-          Expanded(
+          SizedBox(
+            height: 300, // Set the desired height
             child: ListView.separated(
-              separatorBuilder: (context, index) =>
-                  sizedboxwithheight(kheight! * .01),
+              separatorBuilder: (context, index) => sizedboxwithheight(
+                kheight! * .01,
+              ),
               shrinkWrap: true,
               physics: const ClampingScrollPhysics(),
               scrollDirection: Axis.vertical,
-              itemCount: 89,
+              itemCount: 14,
               itemBuilder: (context, index) {
                 return Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -121,35 +122,33 @@ class CustumShowModelBottumSheet extends StatelessWidget {
             ),
           ),
           sizedboxwithheight(kheight! * .02),
-          Expanded(
-            child: SizedBox(
-              height: 380,
-              child: ListView.separated(
-                separatorBuilder: (context, index) => sizedboxwithWidth(
-                  kwidth! * .02,
-                ),
-                physics: const BouncingScrollPhysics(),
-                scrollDirection: Axis.horizontal,
-                itemCount: 4,
-                itemBuilder: (context, index) {
-                  List<String> images = [
-                    'asset/images/Rectangle 2656.png',
-                    'asset/images/cart like image2.png',
-                    'asset/images/shoe 2.jpg',
-                    'asset/images/shoe 3.jpeg',
-                  ];
-                  List<Color> colors = [
-                    const Color.fromRGBO(83, 83, 83, 1.0),
-                    kyellow,
-                    kblack,
-                    AppTheme.kred
-                  ];
-                  return CartLikedItemBuilder(
-                    color: colors[index],
-                    image: images[index],
-                  );
-                },
+          SizedBox(
+            height: 390,
+            child: ListView.separated(
+              separatorBuilder: (context, index) => sizedboxwithWidth(
+                kwidth! * .02,
               ),
+              physics: const BouncingScrollPhysics(),
+              scrollDirection: Axis.horizontal,
+              itemCount: 4,
+              itemBuilder: (context, index) {
+                List<String> images = [
+                  'asset/images/Rectangle 2656.png',
+                  'asset/images/cart like image2.png',
+                  'asset/images/shoe 2.jpg',
+                  'asset/images/shoe 3.jpeg',
+                ];
+                List<Color> colors = [
+                  const Color.fromRGBO(83, 83, 83, 1.0),
+                  kyellow,
+                  kblack,
+                  AppTheme.kred
+                ];
+                return CartLikedItemBuilder(
+                  color: colors[index],
+                  image: images[index],
+                );
+              },
             ),
           ),
         ],

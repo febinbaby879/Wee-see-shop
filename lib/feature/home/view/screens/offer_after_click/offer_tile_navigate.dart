@@ -1,6 +1,7 @@
 import 'package:e_commerce_app/core/const.dart';
 import 'package:e_commerce_app/feature/cart/view/widgets/cart_liked_containers_builder.dart';
 import 'package:e_commerce_app/feature/home/view/screens/detail_screen/detail_screen.dart';
+import 'package:e_commerce_app/feature/home/view/screens/offer_after_click/top_items.dart';
 import 'package:flutter/material.dart';
 
 class OffersTileHotDealsScreen extends StatelessWidget {
@@ -49,7 +50,6 @@ class OffersTileHotDealsScreen extends StatelessWidget {
                 child: Row(
                   children: [
                     SizedBox(
-                      //height: kheight!,
                       width: kwidth! / 2.3,
                       child: ListView.builder(
                         scrollDirection: Axis.vertical,
@@ -148,43 +148,3 @@ class OffersTileHotDealsScreen extends StatelessWidget {
   }
 }
 
-class TopItem extends StatelessWidget {
-  const TopItem({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        IconButton(
-          onPressed: () {},
-          icon: const Icon(
-            Icons.remove_red_eye_outlined,
-            color: kyellow,
-          ),
-        ),
-        const Spacer(),
-        IconButton(
-          onPressed: () {},
-          icon: const Icon(
-            Icons.search_rounded,
-            color: kyellow,
-          ),
-        ),
-        IconButton(
-          onPressed: () {},
-          icon: const Icon(
-            Icons.alarm,
-            color: kyellow,
-          ),
-        ),
-        IconButton(
-          onPressed: () {},
-          icon: const Icon(
-            Icons.message,
-            color: kyellow,
-          ),
-        ),
-      ],
-    );
-  }
-}

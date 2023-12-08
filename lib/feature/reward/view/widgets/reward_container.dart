@@ -12,6 +12,7 @@ class RewardWallet extends StatelessWidget {
       'asset/images/reward image 3.png',
     ];
     return ListView.builder(
+      physics: const BouncingScrollPhysics(),
       scrollDirection: Axis.vertical,
       itemCount: 3,
       itemBuilder: (context, index) {

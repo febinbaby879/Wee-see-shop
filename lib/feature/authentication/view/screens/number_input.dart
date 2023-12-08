@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/commen/elevated_buttun.dart';
 import 'package:e_commerce_app/core/const.dart';
 import 'package:e_commerce_app/feature/authentication/view/screens/otp_input_screen.dart';
 import 'package:flutter/material.dart';
@@ -68,7 +69,8 @@ class NumberScreen extends StatelessWidget {
                       ),
                     ),
                     sizedboxwithheight(kheight! * .009),
-                    ElevatedButton(
+                    CustomButton(
+                      txt: 'Continue',
                       onPressed: () {
                         Navigator.of(context).push(
                           MaterialPageRoute(
@@ -76,21 +78,33 @@ class NumberScreen extends StatelessWidget {
                           ),
                         );
                       },
-                      style: ElevatedButton.styleFrom(
-                        side: const BorderSide(color: Colors.yellow),
-                        minimumSize: const Size(350, 55),
-                        fixedSize: const Size(350, 55),
-                        foregroundColor: Colors.black,
-                        backgroundColor: kMainBlack,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(6),
-                        ),
-                      ),
-                      child: const Text(
-                        'Continue',
-                        style: TextStyle(color: kwhite),
-                      ),
-                    ),
+                      foregroundColor: kwhite,
+                      backgroundColor: kblack,
+                      borderolor: kyellow,
+                    )
+                    // ElevatedButton(
+                    //   onPressed: () {
+                    //     Navigator.of(context).push(
+                    //       MaterialPageRoute(
+                    //         builder: (context) => const OTPScreen(),
+                    //       ),
+                    //     );
+                    //   },
+                    //   style: ElevatedButton.styleFrom(
+                    //     side: const BorderSide(color: Colors.yellow),
+                    //     // minimumSize: const Size(350, 55),
+                    //     //  fixedSize: const Size(350, 55),
+                    //     foregroundColor: Colors.black,
+                    //     backgroundColor: kMainBlack,
+                    //     shape: RoundedRectangleBorder(
+                    //       borderRadius: BorderRadius.circular(6),
+                    //     ),
+                    //   ),
+                    //   child: const Text(
+                    //     'Continue',
+                    //     style: TextStyle(color: kwhite),
+                    //   ),
+                    // ),
                   ],
                 ),
               )

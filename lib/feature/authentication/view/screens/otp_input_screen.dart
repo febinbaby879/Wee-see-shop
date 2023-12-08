@@ -54,6 +54,7 @@ class OTPScreen extends StatelessWidget {
               ),
             ),
             SizedBox(
+              // width: double.infinity,
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Column(

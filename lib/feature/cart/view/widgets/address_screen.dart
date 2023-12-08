@@ -1,38 +1,43 @@
+import 'package:e_commerce_app/commen/elevated_buttun.dart';
 import 'package:e_commerce_app/core/const.dart';
 import 'package:e_commerce_app/feature/cart/view/widgets/top_tile.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class AddressSCreen extends StatelessWidget {
-  const AddressSCreen({super.key});
+class AddressScreen extends StatelessWidget {
+  const AddressScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final height = MediaQuery.of(context).size.height;
-    return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: Column(
+    return GestureDetector(
+      onTap: () {
+        FocusScopeNode focusScope = FocusScope.of(context);
+        if (!focusScope.hasPrimaryFocus) {
+          focusScope.unfocus();
+        }
+      },
+      child: Scaffold(
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            SizedBox(
-              height: height * 0.94,
-              child: Column(
-                children: [
-                  const TopTittle(),
-                  textContainer('Appartment'),
-                  sizedboxwithheight(kheight! * .02),
-                  textContainer('Address'),
-                  sizedboxwithheight(kheight! * .02),
-                  textContainer('Street'),
-                  sizedboxwithheight(kheight! * .02),
-                  textContainer('Landmark'),
-                  sizedboxwithheight(kheight! * .03),
-                  locationText(),
-                ],
-              ),
+            Column(
+              children: [
+                TopTittle(
+                  text: 'Address',
+                  function: () => Navigator.of(context).pop(),
+                ),
+                textContainer('Appartment'),
+                SizedBox(height: kheight! * 0.02),
+                textContainer('Address'),
+                SizedBox(height: kheight! * 0.02),
+                textContainer('Street'),
+                SizedBox(height: kheight! * 0.02),
+                textContainer('Landmark'),
+                SizedBox(height: kheight! * 0.03),
+                locationText(),
+              ],
             ),
-            Expanded(
-              child: bottumAddButton(context),
-            ),
+            bottumAddButton(context),
           ],
         ),
       ),
@@ -41,18 +46,15 @@ class AddressSCreen extends StatelessWidget {
 
   Widget bottumAddButton(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 10),
-      child: SizedBox(
-        width: double.infinity,
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
-          style: const ButtonStyle(
-            backgroundColor: MaterialStatePropertyAll<Color>(kyellow),
-          ),
-          child: const Text('SAVE ADDRESS'),
-        ),
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: CustomButton(
+        borderolor: kyellow,
+        txt: 'Save address',
+        onPressed: () {
+          Navigator.of(context).pop();
+        },
+        foregroundColor: kblack,
+        backgroundColor: kyellow,
       ),
     );
   }
@@ -66,8 +68,8 @@ class AddressSCreen extends StatelessWidget {
           color: kyellow,
           size: 18,
         ),
-        sizedboxwithWidth(
-          kwidth! * .01,
+        SizedBox(
+          width: kwidth! * 0.01,
         ),
         const Text(
           'Use current location',
@@ -78,19 +80,22 @@ class AddressSCreen extends StatelessWidget {
   }
 
   Widget textContainer(String text) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(4),
-        color: klightGrey,
-      ),
-      width: double.infinity,
-      height: 40,
-      child: Padding(
-        padding: const EdgeInsets.only(left: 20, top: 10),
-        child: Text(
-          text,
-          style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w300),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: CupertinoTextField(
+        style: const TextStyle(
+          color: kwhite,
         ),
+        placeholder: text,
+        placeholderStyle: const TextStyle(
+          fontSize: 16,
+          color: kgrey,
+        ),
+        decoration: BoxDecoration(
+          color: klightGrey,
+          borderRadius: BorderRadius.circular(8.0),
+        ),
+        cursorColor: kwhite,
       ),
     );
   }

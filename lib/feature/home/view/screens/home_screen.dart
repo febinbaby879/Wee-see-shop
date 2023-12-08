@@ -1,11 +1,11 @@
 import 'package:e_commerce_app/core/const.dart';
 import 'package:e_commerce_app/feature/home/view/widgets/banners.dart';
 import 'package:e_commerce_app/feature/home/view/widgets/brand_banner.dart';
+import 'package:e_commerce_app/feature/home/view/widgets/location_container.dart';
 import 'package:e_commerce_app/feature/home/view/widgets/offer_tile.dart';
 import 'package:e_commerce_app/feature/home/view/widgets/reward_tile.dart';
 import 'package:e_commerce_app/feature/home/view/widgets/top_icons.dart';
 import 'package:e_commerce_app/feature/home/view/widgets/view_product_container.dart';
-import 'package:e_commerce_app/feature/location/view/screen/location_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -18,7 +18,7 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           children: [
             const CustumTop(),
-            const LocationContainer(),
+            const LocationContainerr(),
             text('RECENT CALL'),
             const ViewProductContaner(),
             const Banners(),
@@ -53,46 +53,3 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-
-class LocationContainer extends StatelessWidget {
-  const LocationContainer({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Dismissible(
-      key: const ValueKey('location_container_dismissible_key'),
-      direction: DismissDirection.down,
-      onDismissed: (_) {
-        Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (context) => const LocationScreen(),
-          ),
-        );
-      },
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 17),
-        child: SizedBox(
-          width: double.infinity,
-          height: 40,
-          child: GestureDetector(
-            onVerticalDragUpdate: (details) {
-              if (details.primaryDelta! > 0) {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => const LocationScreen(),
-                  ),
-                );
-              }
-            },
-            child: Center(
-              child: Image.asset('asset/images/downarrow.gif'),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
-

@@ -10,14 +10,18 @@ class MessageContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        sizedboxwithheight(kheight! * .02),
         SizedBox(
           height: 40,
           child: CupertinoTextField(
             placeholder: 'Search',
-            placeholderStyle: const TextStyle(fontSize: 10, color: kwhite),
-            prefix: const Icon(
-              CupertinoIcons.search,
-              color: kwhite,
+            placeholderStyle: const TextStyle(fontSize: 15, color: kwhite),
+            prefix: const Padding(
+              padding: EdgeInsets.only(left: 8.0),
+              child: Icon(
+                CupertinoIcons.search,
+                color: kwhite,
+              ),
             ),
             padding: const EdgeInsets.all(12.0),
             decoration: BoxDecoration(
@@ -27,85 +31,91 @@ class MessageContainer extends StatelessWidget {
           ),
         ),
         Expanded(
-          child: ListView.separated(
-            scrollDirection: Axis.vertical,
-            physics: const BouncingScrollPhysics(),
-            itemBuilder: (context, index) => InkWell(
-              onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => const ChatScreen(),
-              )),
-              child: SizedBox(
-                height: 50,
-                child: Row(
-                  children: [
-                    Stack(
-                      children: [
-                        Container(
-                          height: 50,
-                          width: 50,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(12),
-                            child: Image.asset(
-                              'asset/images/Rectangle 2656.png',
-                              fit: BoxFit.cover,
+          child: SizedBox(
+            child: ListView.separated(
+              shrinkWrap: true,
+              scrollDirection: Axis.vertical,
+              physics: const BouncingScrollPhysics(),
+              itemBuilder: (context, index) => InkWell(
+                onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const ChatScreen(),
+                )),
+                child: SizedBox(
+                  height: 60,
+                  child: Row(
+                    children: [
+                      Stack(
+                        children: [
+                          Container(
+                            height: 50,
+                            width: 50,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(12),
+                              child: Image.asset(
+                                'asset/images/Rectangle 2656.png',
+                                fit: BoxFit.cover,
+                              ),
                             ),
                           ),
-                        ),
-                        const Positioned(
-                          top: -6,
-                          right: -6,
-                          child: Icon(
-                            Icons.circle,
-                            color: Colors.green,
-                            size: 18,
+                          const Positioned(
+                            top: -6,
+                            right: -6,
+                            child: CircleAvatar(
+                              radius: 10,
+                              child: Icon(
+                                Icons.circle,
+                                color: Colors.green,
+                                size: 18,
+                              ),
+                            ),
                           ),
-                        )
-                      ],
-                    ),
-                    sizedboxwithWidth(kwidth! * .02),
-                    const Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        Text(
-                          'Andrew Jacab',
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        ),
-                        Text(
-                          'Typing ....',
-                          style: TextStyle(fontSize: 12, color: kgrey),
-                        ),
-                      ],
-                    ),
-                    const Spacer(),
-                    const Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        Text(
-                          'Today',
-                          style: TextStyle(fontSize: 11),
-                        ),
-                        CircleAvatar(
-                          radius: 10,
-                          backgroundColor: kwhite,
-                          child: Text(
-                            '5',
+                        ],
+                      ),
+                      sizedboxwithWidth(kwidth! * .02),
+                      const Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Text(
+                            'Andrew Jacab',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            'Typing ....',
+                            style: TextStyle(fontSize: 12, color: kgrey),
+                          ),
+                        ],
+                      ),
+                      const Spacer(),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          const Text(
+                            'Today',
                             style: TextStyle(fontSize: 11),
                           ),
-                        ),
-                      ],
-                    ),
-                    sizedboxwithWidth(kwidth! * .02),
-                  ],
+                          CircleAvatar(
+                            radius: 10,
+                            backgroundColor: kwhite,
+                            child: Text(
+                              '${index + 1}',
+                              style: const TextStyle(fontSize: 11),
+                            ),
+                          ),
+                        ],
+                      ),
+                      sizedboxwithWidth(kwidth! * .02),
+                    ],
+                  ),
                 ),
               ),
+              separatorBuilder: (context, index) => const Divider(),
+              itemCount: 21,
             ),
-            separatorBuilder: (context, index) => const Divider(),
-            itemCount: 21,
           ),
         )
       ],

@@ -16,7 +16,7 @@ class OffersTile extends StatelessWidget {
     ];
     final List<String> offerGiffs = [
       'asset/images/nikenewgiff.gif',
-      'asset/images/pumagiff.gif',
+      'asset/images/69497f8a3acbb6ffd9ab468704d7e650.gif',
       'asset/images/lvlow.gif',
     ];
     List<Color> tileColor = [
@@ -52,19 +52,29 @@ class OffersTile extends StatelessWidget {
                 builder: (context) => const OffersTileHotDealsScreen(),
               )),
               child: Container(
-                //margin: const EdgeInsets.only(left: 10, right: 10),
                 color: tileColor[index],
                 width: 170,
                 height: 270,
                 child: Stack(
                   children: [
+                    Positioned.fill(
+                      child: Opacity(
+                        opacity: .1,
+                        child: Image.asset(
+                          offerGiffs[index],
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
                     Positioned(
                       top: 10,
                       left: 10,
                       child: SizedBox(
                         width: 30,
                         height: 30,
-                        child: Image.asset(brandImage[index]),
+                        child: Image.asset(
+                          brandImage[index],
+                        ),
                       ),
                     ),
                     Positioned(
@@ -80,20 +90,6 @@ class OffersTile extends StatelessWidget {
                       child: Text(
                         'Get 10% instant discount \non purchase of products acr\noss fashion category',
                         style: TextStyle(fontSize: 12),
-                      ),
-                    ),
-                    Positioned(
-                      top: 120,
-                      left: 10,
-                      child: Opacity(
-                        opacity: .1,
-                        child: SizedBox(
-                          height: 170,
-                          width: 140,
-                          child: Image.asset(
-                            offerGiffs[index],
-                          ),
-                        ),
                       ),
                     ),
                     Positioned(

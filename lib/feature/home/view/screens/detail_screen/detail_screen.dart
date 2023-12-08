@@ -2,7 +2,7 @@ import 'package:e_commerce_app/core/const.dart';
 import 'package:e_commerce_app/core/theme.dart';
 import 'package:e_commerce_app/feature/cart/view/widgets/cart_liked_containers_builder.dart';
 import 'package:e_commerce_app/feature/home/view/screens/detail_screen/custum_sheet.dart';
-import 'package:e_commerce_app/feature/home/view/screens/offer_after_click/offer_tile_navigate.dart';
+import 'package:e_commerce_app/feature/home/view/screens/offer_after_click/top_items.dart';
 import 'package:flutter/material.dart';
 
 class DetailScreen extends StatelessWidget {
@@ -173,7 +173,7 @@ class DetailScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15),
               child: SizedBox(
-                height: 380,
+                height: 390,
                 child: ListView.separated(
                   separatorBuilder: (context, index) => sizedboxwithWidth(
                     kwidth! * .02,

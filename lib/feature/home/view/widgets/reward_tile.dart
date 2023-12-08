@@ -19,11 +19,12 @@ class RewardTile extends StatelessWidget {
       'asset/images/reward item 4.png',
     ];
     return Padding(
-      padding: const EdgeInsets.only(bottom: 100, top: 20),
+      padding: const EdgeInsets.only(bottom: 100, top: 20, right: 20, left: 20),
       child: SizedBox(
-        //width: 500,
-        height: 220,
-        child: ListView.builder(
+        height: 230,
+        child: ListView.separated(
+          separatorBuilder: (context, index) =>
+              sizedboxwithWidth(kwidth! * .03),
           scrollDirection: Axis.horizontal,
           physics: const BouncingScrollPhysics(),
           itemCount: 4,
@@ -33,7 +34,6 @@ class RewardTile extends StatelessWidget {
                 border: Border.all(color: borderColor[index]),
                 color: kMainBlack,
               ),
-              margin: const EdgeInsets.only(left: 20),
               child: Column(
                 children: [
                   sizedboxwithheight(kheight! * .03),
@@ -46,7 +46,12 @@ class RewardTile extends StatelessWidget {
                     ),
                   ),
                   sizedboxwithheight(kheight! * .03),
-                  const Text(' Get 20% off on \nselected brands'),
+                  SizedBox(
+                    width: kwidth! * .4,
+                    child: const Center(
+                      child: Text(' Get 20% off on \nselected brands'),
+                    ),
+                  ),
                   sizedboxwithheight(kheight! * .03),
                   SizedBox(
                     height: 20,

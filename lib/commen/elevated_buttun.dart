@@ -1,9 +1,11 @@
+import 'package:e_commerce_app/core/const.dart';
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
   final Color foregroundColor;
   final Color backgroundColor;
   final String txt;
+  final Color borderolor;
   final VoidCallback onPressed;
   const CustomButton({
     super.key,
@@ -11,13 +13,20 @@ class CustomButton extends StatelessWidget {
     required this.onPressed,
     required this.foregroundColor,
     required this.backgroundColor,
+    this.borderolor = kblack,
   });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 15),
-      child: SizedBox(
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(4),
+          border: Border.all(
+            color: borderolor,
+          ),
+        ),
         width: double.infinity,
         child: ElevatedButton(
           onPressed: onPressed,

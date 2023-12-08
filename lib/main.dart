@@ -1,6 +1,6 @@
 import 'package:e_commerce_app/core/const.dart';
 import 'package:e_commerce_app/core/theme.dart';
-import 'package:e_commerce_app/feature/authentication/view/screens/number_input.dart';
+import 'package:e_commerce_app/feature/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: AppTheme.theme,
       debugShowCheckedModeBanner: false,
       title: 'We see shop',
-      home: const NumberScreen(),
+      home: const SplashScreen(),
     );
   }
 }

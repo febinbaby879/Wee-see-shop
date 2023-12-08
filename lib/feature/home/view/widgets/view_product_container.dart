@@ -20,16 +20,21 @@ class ViewProductContaner extends StatelessWidget {
             child: Row(
               children: [
                 sizedboxwithWidth(kwidth! * .02),
-                const CircleAvatar(),
+                const CircleAvatar(
+                  backgroundImage: AssetImage(
+                    'asset/images/cart like image2.png',
+                  ),
+                ),
                 sizedboxwithWidth(kwidth! * .03),
-                Column(
+                const Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    sizedboxwithheight(kheight! * .025),
-                    const Text(
+                    Text(
                       'Christine',
+                      style: TextStyle(color: kblack),
                     ),
-                    const Text(
+                    Text(
                       'Nike sowroom',
                       style: TextStyle(color: kblack),
                     ),
@@ -46,8 +51,10 @@ class ViewProductContaner extends StatelessWidget {
                   child: const Center(
                     child: Text(
                       'View product',
-                      style:
-                          TextStyle(fontWeight: FontWeight.w300, fontSize: 12),
+                      style: TextStyle(
+                        fontWeight: FontWeight.w300,
+                        fontSize: 12,
+                      ),
                     ),
                   ),
                 ),

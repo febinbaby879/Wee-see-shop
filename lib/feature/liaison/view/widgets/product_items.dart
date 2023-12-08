@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/core/const.dart';
+import 'package:e_commerce_app/core/theme.dart';
 import 'package:e_commerce_app/feature/cart/view/widgets/cart_liked_containers_builder.dart';
 import 'package:flutter/material.dart';
 
@@ -65,18 +66,10 @@ class ProductList extends StatelessWidget {
                     ];
                     List<Color> colors = [
                       kblack,
-                      Colors.red,
-                      const Color.fromRGBO(83, 83, 83, 1.0),
+                      AppTheme.kred,
+                      klightGrey,
                       kyellow,
                     ];
-                    //  InkWell(
-                    //   onTap: () => Navigator.of(context).push(
-                    //     MaterialPageRoute(
-                    //       builder: (context) => DetailScreen(
-                    //         img: images[index],
-                    //       ),
-                    //     ),
-                    //   ),
                     return CartLikedItemBuilder(
                       color: colors[index],
                       image: images[index],
@@ -100,24 +93,15 @@ class ProductList extends StatelessWidget {
                       'asset/images/shoe 3.jpeg',
                     ];
                     List<Color> colors = [
-                      const Color.fromRGBO(83, 83, 83, 1.0),
+                      klightGrey,
                       kyellow,
                       kblack,
-                      Colors.red
+                      AppTheme.kred
                     ];
-                    //  InkWell(
-                    //   onTap: () => Navigator.of(context).push(
-                    //     MaterialPageRoute(
-                    //       builder: (context) => DetailScreen(
-                    //         img: images[index],
-                    //       ),
-                    //     ),
-                    //   ),
                     return CartLikedItemBuilder(
                       color: colors[index],
                       image: images[index],
                     );
-                    // );
                   },
                 ),
               ),

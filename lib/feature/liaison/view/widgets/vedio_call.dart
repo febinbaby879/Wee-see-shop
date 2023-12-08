@@ -10,14 +10,18 @@ class VedioCallBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        sizedboxwithheight(kheight! * .02),
         SizedBox(
-          height: 37,
+          height: 40,
           child: CupertinoTextField(
             placeholder: 'Search',
-            placeholderStyle: const TextStyle(fontSize: 10, color: kwhite),
-            prefix: const Icon(
-              CupertinoIcons.search,
-              color: kwhite,
+            placeholderStyle: const TextStyle(fontSize: 16, color: kwhite),
+            prefix: const Padding(
+              padding: EdgeInsets.only(left: 8.0),
+              child: Icon(
+                CupertinoIcons.search,
+                color: kwhite,
+              ),
             ),
             padding: const EdgeInsets.all(12.0),
             decoration: BoxDecoration(
@@ -27,85 +31,84 @@ class VedioCallBox extends StatelessWidget {
           ),
         ),
         Expanded(
-          child: ListView.separated(
-            scrollDirection: Axis.vertical,
-            physics: const BouncingScrollPhysics(),
-            itemBuilder: (context, index) => InkWell(
-              onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => const ChatScreen(),
-              )),
-              child: SizedBox(
-                height: 60,
-                child: Row(
-                  children: [
-                    Stack(
-                      children: [
-                        Container(
-                          height: 50,
-                          width: 50,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(25),
-                            child: Image.asset(
-                              'asset/images/cart like image2.png',
-                              fit: BoxFit.cover,
+          child: SizedBox(
+            child: ListView.separated(
+              scrollDirection: Axis.vertical,
+              physics: const BouncingScrollPhysics(),
+              itemBuilder: (context, index) => InkWell(
+                onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const ChatScreen(),
+                )),
+                child: SizedBox(
+                  height: 60,
+                  child: Row(
+                    children: [
+                      Stack(
+                        children: [
+                          Container(
+                            height: 50,
+                            width: 50,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(25),
+                              child: Image.asset(
+                                'asset/images/cart like image2.png',
+                                fit: BoxFit.cover,
+                              ),
                             ),
                           ),
-                        ),
-                        const Positioned(
-                          top: -6,
-                          right: -6,
-                          child: CircleAvatar(
-                            radius: 12,
-                            child: Icon(
-                              Icons.circle,
-                              color: Colors.green,
-                              size: 18,
+                          const Positioned(
+                            top: -6,
+                            right: -6,
+                            child: CircleAvatar(
+                              radius: 12,
+                              child: Icon(
+                                Icons.circle,
+                                color: Colors.green,
+                                size: 18,
+                              ),
                             ),
                           ),
-                        ),
-                      ],
-                    ),
-                    sizedboxwithWidth(kwidth! * .02),
-                    const Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        Text(
-                          'Andrew Jacab',
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        ),
-                        Text(
-                          'Nike staff | Today 14:30 PM',
-                          style: TextStyle(fontSize: 12, color: kgrey),
-                        ),
-                      ],
-                    ),
-                    const Spacer(),
-                    const Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        Text(
-                          '',
-                          style: TextStyle(fontSize: 11),
-                        ),
-                        Icon(
-                          Icons.video_camera_front_outlined,
-                          color: kyellow,
-                          size: 25,
-                        ),
-                      ],
-                    ),
-                    sizedboxwithWidth(kwidth! * .02),
-                  ],
+                        ],
+                      ),
+                      sizedboxwithWidth(kwidth! * .02),
+                      const Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Text(
+                            'Andrew Jacab',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            'Nike staff | Today 14:30 PM',
+                            style: TextStyle(fontSize: 12, color: kgrey),
+                          ),
+                        ],
+                      ),
+                      const Spacer(),
+                      const Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Text(''),
+                          Icon(
+                            Icons.videocam_outlined,
+                            color: kyellow,
+                            size: 25,
+                          ),
+                        ],
+                      ),
+                      sizedboxwithWidth(kwidth! * .02),
+                    ],
+                  ),
                 ),
               ),
+              separatorBuilder: (context, index) => const Divider(),
+              itemCount: 21,
             ),
-            separatorBuilder: (context, index) => const Divider(),
-            itemCount: 21,
           ),
         ),
       ],
