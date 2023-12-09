@@ -15,7 +15,7 @@ class VedioCallBox extends StatelessWidget {
           height: 40,
           child: CupertinoTextField(
             placeholder: 'Search',
-            placeholderStyle: const TextStyle(fontSize: 16, color: kwhite),
+            placeholderStyle: const TextStyle(fontSize: 15, color: kwhite),
             prefix: const Padding(
               padding: EdgeInsets.only(left: 8.0),
               child: Icon(

@@ -32,15 +32,15 @@ class LocationScreen extends StatelessWidget {
                 height: 60.0,
                 child: CupertinoTextField(
                   style: TextStyle(
-                    color: kwhite,
+                    color: kblack,
                   ),
                   placeholder: 'Enter your location',
                   placeholderStyle: TextStyle(
                     fontSize: 16,
-                    color: kgrey,
+                    color: kwhite,
                   ),
                   decoration: BoxDecoration(
-                    color: kwhite,
+                    color: kgrey,
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(12),
                       bottomLeft: Radius.circular(12),

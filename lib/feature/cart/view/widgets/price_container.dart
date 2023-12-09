@@ -1,7 +1,6 @@
+import 'package:e_commerce_app/core/const.dart';
 import 'package:e_commerce_app/feature/cart/view/widgets/main_heading.dart';
 import 'package:flutter/material.dart';
-
-import '../../../../core/const.dart';
 
 class PriceContainer extends StatelessWidget {
   const PriceContainer({super.key});
@@ -53,7 +52,7 @@ class PriceContainer extends StatelessWidget {
     );
   }
 
-  Padding pricedetailRowText(String category, amnt) {
+  Widget pricedetailRowText(String category, amnt) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Row(
