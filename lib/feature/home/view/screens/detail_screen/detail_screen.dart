@@ -208,7 +208,7 @@ class DetailScreen extends StatelessWidget {
     );
   }
 
-  Container varientCircle(text) {
+  Widget varientCircle(text) {
     return Container(
       width: 30,
       height: 30,
@@ -228,21 +228,22 @@ class DetailScreen extends StatelessWidget {
     );
   }
 
-  Container butttuns(border, under, txt, String data) {
-    return Container(
-      decoration: BoxDecoration(
-        color: under,
-        border: Border.all(color: border),
-        borderRadius: BorderRadius.circular(25),
-      ),
-      width: kwidth! / 2.3,
-      height: 50,
-      child: Center(
-        child: Text(
-          data,
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            color: txt,
+  Widget butttuns(border, under, txt, String data) {
+    return Flexible(
+      child: Container(
+        decoration: BoxDecoration(
+          color: under,
+          border: Border.all(color: border),
+          borderRadius: BorderRadius.circular(25),
+        ),
+        height: 50,
+        child: Center(
+          child: Text(
+            data,
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: txt,
+            ),
           ),
         ),
       ),

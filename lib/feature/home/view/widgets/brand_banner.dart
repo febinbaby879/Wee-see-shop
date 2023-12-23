@@ -7,7 +7,7 @@ class BrandBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<String> imageList = [
-      'asset/images/adidas.png',
+      'asset/images/gucci.png',
       'asset/images/fendi.png',
       'asset/images/gucci.png',
       'asset/images/LV.png',

@@ -13,7 +13,6 @@ class CartLikedItemBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      //height: 210,
       width: 190,
       color: color,
       child: Column(
@@ -79,7 +78,7 @@ class CartLikedItemBuilder extends StatelessWidget {
                         style: TextStyle(
                           color: Colors.green,
                           fontWeight: FontWeight.w600,
-                          fontSize: 13,
+                          fontSize: 14,
                         ),
                       ),
                     ],

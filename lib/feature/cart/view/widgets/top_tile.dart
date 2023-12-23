@@ -13,8 +13,6 @@ class TopTittle extends StatelessWidget {
       padding: const EdgeInsets.only(
         top: 50,
         bottom: 30,
-        left: 20,
-        right: 20,
       ),
       child: SizedBox(
         child: Row(

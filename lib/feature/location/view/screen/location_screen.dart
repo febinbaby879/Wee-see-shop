@@ -20,7 +20,7 @@ class LocationScreen extends StatelessWidget {
           children: [
             Positioned.fill(
               child: Image.asset(
-                'asset/images/earth.jpeg',
+                'asset/images/loactionoriginal.gif',
                 fit: BoxFit.cover,
               ),
             ),

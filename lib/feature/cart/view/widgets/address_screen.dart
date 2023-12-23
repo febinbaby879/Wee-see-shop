@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/commen/elevated_buttun.dart';
+import 'package:e_commerce_app/commen/text_field.dart';
 import 'package:e_commerce_app/core/const.dart';
 import 'package:e_commerce_app/feature/cart/view/widgets/top_tile.dart';
 import 'package:flutter/cupertino.dart';
@@ -17,45 +18,45 @@ class AddressScreen extends StatelessWidget {
         }
       },
       child: Scaffold(
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Column(
-              children: [
-                TopTittle(
-                  text: 'Address',
-                  function: () => Navigator.of(context).pop(),
-                ),
-                textContainer('Appartment'),
-                SizedBox(height: kheight! * 0.02),
-                textContainer('Address'),
-                SizedBox(height: kheight! * 0.02),
-                textContainer('Street'),
-                SizedBox(height: kheight! * 0.02),
-                textContainer('Landmark'),
-                SizedBox(height: kheight! * 0.03),
-                locationText(),
-              ],
-            ),
-            bottumAddButton(context),
-          ],
+        body: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Column(
+                children: [
+                  TopTittle(
+                    text: '',
+                    function: () => Navigator.of(context).pop(),
+                  ),
+                  const CupertnoField(placaHolder: 'Apartment / Flat'),
+                  sizedboxwithheight(kheight! * 0.02),
+                  const CupertnoField(placaHolder: 'Address'),
+                  sizedboxwithheight(kheight! * 0.02),
+                  const CupertnoField(placaHolder: 'Street'),
+                  sizedboxwithheight(kheight! * 0.02),
+                  const CupertnoField(placaHolder: 'Landmark'),
+                  sizedboxwithheight(kheight! * 0.02),
+                  locationText(),
+                ],
+              ),
+              bottumAddButton(context),
+            ],
+          ),
         ),
       ),
     );
   }
 
   Widget bottumAddButton(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: CustomButton(
-        borderolor: kyellow,
-        txt: 'Save address',
-        onPressed: () {
-          Navigator.of(context).pop();
-        },
-        foregroundColor: kblack,
-        backgroundColor: kyellow,
-      ),
+    return CustomButton(
+      borderolor: kyellow,
+      txt: 'Save address',
+      onPressed: () {
+        Navigator.of(context).pop();
+      },
+      foregroundColor: kblack,
+      backgroundColor: kyellow,
     );
   }
 
@@ -80,23 +81,20 @@ class AddressScreen extends StatelessWidget {
   }
 
   Widget textContainer(String text) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: CupertinoTextField(
-        style: const TextStyle(
-          color: kwhite,
-        ),
-        placeholder: text,
-        placeholderStyle: const TextStyle(
-          fontSize: 16,
-          color: kgrey,
-        ),
-        decoration: BoxDecoration(
-          color: klightGrey,
-          borderRadius: BorderRadius.circular(8.0),
-        ),
-        cursorColor: kwhite,
+    return CupertinoTextField(
+      style: const TextStyle(
+        color: kwhite,
       ),
+      placeholder: text,
+      placeholderStyle: const TextStyle(
+        fontSize: 16,
+        color: kgrey,
+      ),
+      decoration: BoxDecoration(
+        color: klightGrey,
+        borderRadius: BorderRadius.circular(8.0),
+      ),
+      cursorColor: kwhite,
     );
   }
 }

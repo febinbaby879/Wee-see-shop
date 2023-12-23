@@ -8,18 +8,16 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    navigate(context);
     return Scaffold(
       body: Stack(
-       // fit: ,
         children: [
-          // Full-cover GIF image
           Positioned.fill(
             child: Image.asset(
-              'asset/images/wee see shp.gif',
+              'asset/images/we see shop splash.png',
               fit: BoxFit.cover,
             ),
           ),
-          // Positioned at the bottom
           Positioned(
             left: 0,
             right: 0,
@@ -41,6 +39,15 @@ class SplashScreen extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  void navigate(BuildContext context) async {
+    await Future.delayed(const Duration(seconds: 3));
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(
+        builder: (context) => const NumberScreen(),
       ),
     );
   }

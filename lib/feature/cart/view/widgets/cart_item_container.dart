@@ -23,24 +23,20 @@ class CartItemContainer extends StatelessWidget {
           ),
           sizedboxwithWidth(kwidth! * .03),
           Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
                 'Nike air jarden',
                 style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 10),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    buttunContainer('Size', '8'),
-                    sizedboxwithWidth(kwidth! * .02),
-                    buttunContainer('Qty', '1'),
-                    sizedboxwithWidth(kwidth! * .09),
-                    const Text('\$599/-'),
-                  ],
-                ),
+              Row(
+                children: [
+                  buttunContainer('Size', '8'),
+                  buttunContainer('Qty', '1'),
+                  sizedboxwithWidth(kwidth! * .02),
+                  const Text('\$599/-'),
+                ],
               ),
             ],
           ),

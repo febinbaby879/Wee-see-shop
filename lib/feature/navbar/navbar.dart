@@ -3,6 +3,7 @@ import 'package:e_commerce_app/core/const.dart';
 import 'package:e_commerce_app/feature/cart/view/screen/cart_screen.dart';
 import 'package:e_commerce_app/feature/home/view/screens/home_screen.dart';
 import 'package:e_commerce_app/feature/liaison/view/screens/liaison_screen.dart';
+import 'package:e_commerce_app/feature/profile/view/screen/profile_scree.dart';
 import 'package:e_commerce_app/feature/reward/view/screen/reward_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -119,17 +120,6 @@ class _CustumNavState extends State<CustumNav> {
               ),
             )
           : null,
-    );
-  }
-}
-
-class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Center(
-      child: Text('Profile section'),
     );
   }
 }

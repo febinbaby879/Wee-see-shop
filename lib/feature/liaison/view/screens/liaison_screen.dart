@@ -16,6 +16,7 @@ class LiasonScreen extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (_) => SelectedContainerProvider(),
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         body: Padding(
           padding: const EdgeInsets.only(top: 70),
           child: Column(

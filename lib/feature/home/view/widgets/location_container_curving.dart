@@ -5,7 +5,7 @@ class OppositeCurvePainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
-      ..color = kwhite // Set the color to white
+      ..color = kwhite
       ..strokeCap = StrokeCap.round
       ..style = PaintingStyle.stroke
       ..strokeWidth = 1.0;

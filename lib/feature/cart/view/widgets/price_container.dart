@@ -10,7 +10,7 @@ class PriceContainer extends StatelessWidget {
     return Container(
       color: kwhite,
       width: double.infinity,
-      height: kheight! * .3,
+      height: 234,
       child: Column(
         children: [
           const Padding(

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class AppTheme {
   static final ThemeData theme = ThemeData(
-    fontFamily: 'Oswald',
+    fontFamily: 'Gilroy',
     colorScheme: const ColorScheme.dark(
       primary: kMainBlack,
       onPrimary: kMainBlack,
